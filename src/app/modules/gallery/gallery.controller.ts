@@ -32,7 +32,7 @@ const getGalleryItems = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-// update single slider
+// update single gallery
 const updateGalleryItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const { id } = req.params;
@@ -49,7 +49,7 @@ const updateGalleryItem = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-// delete slider
+// delete gallery
 const removeGalleryItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const { id } = req.params;

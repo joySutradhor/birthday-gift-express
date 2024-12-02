@@ -34,9 +34,6 @@ const getMusicItems = catchAsync(async (req: Request, res: Response) => {
 });
 
 
-
-
-
 // delete slider
 const removeStoreyItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
