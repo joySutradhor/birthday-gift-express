@@ -28,7 +28,7 @@ const getMusicItems = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IMusicItem[]>(res, {
     statusCode: httpStatus.HttpStatus.OK,
     success: true,
-    message: 'Item Retrieved SuccessFully',
+    message: 'Item Retrieved SuccessFully !!',
     data: result,
   });
 });
