@@ -4,6 +4,7 @@ import { GalleryRoutes } from '../modules/gallery/gallery.route';
 import { StoreyRoutes } from '../modules/story/storey.route';
 import { VideoRoutes } from '../modules/video/video.route';
 import { FontRoutes } from '../modules/font/font.route';
+import { MusicRoutes } from '../modules/music/music.route';
 
 const router = express.Router();
 
@@ -28,6 +29,10 @@ const moduleRoutes = [
     path: '/font',
     route: FontRoutes,
   },
+  {
+    path: "/music",
+    route : MusicRoutes,
+  }
 ];
 
 moduleRoutes.forEach(route => router.use(route.path, route.route));
