@@ -27,7 +27,7 @@ const getMusicItems = (0, catchAsync_1.default)(async (req, res) => {
     (0, sendResponse_1.default)(res, {
         statusCode: httpStatus.HttpStatus.OK,
         success: true,
-        message: 'Item Retrieved SuccessFully',
+        message: 'Item Retrieved SuccessFully !!',
         data: result,
     });
 });
