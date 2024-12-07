@@ -6,6 +6,7 @@ import { VideoRoutes } from '../modules/video/video.route';
 import { MusicRoutes } from '../modules/music/music.route';
 import { UserRoutes } from '../modules/user/user.route';
 import { AuthRoutes } from '../modules/auth/auth.route';
+import { TitleRoutes } from '../modules/title/title.route';
 
 const router = express.Router();
 
@@ -17,6 +18,10 @@ const moduleRoutes = [
   {
     path: '/auth',
     route: AuthRoutes,
+  },
+  {
+    path: '/title',
+    route: TitleRoutes,
   },
   {
     path: '/slider',

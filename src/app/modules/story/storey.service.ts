@@ -9,6 +9,7 @@ const createStoreyItem = async (item: IStoreyItem) => {
   const existingStorey = await StoreyItem.findOne({
     title: item.title,
     des: item.des,
+    images: item.images
   });
 
   // If a duplicate is found, throw an error or handle it as needed
