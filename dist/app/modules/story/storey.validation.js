@@ -12,7 +12,10 @@ const createStoreyItemZodSchema = zod_1.default.object({
         }),
         des: zod_1.default.string({
             required_error: 'field is required!',
-        })
+        }),
+        images: zod_1.default.array(zod_1.default.string(), {
+            required_error: 'field is required!',
+        }),
     }),
 });
 const updateStoreyItemZodSchema = zod_1.default.object({

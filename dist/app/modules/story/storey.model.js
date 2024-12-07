@@ -11,6 +11,7 @@ exports.StoreySchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
+    images: [String],
 }, {
     timestamps: true,
     toJSON: {

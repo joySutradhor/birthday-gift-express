@@ -11,6 +11,7 @@ export const StoreySchema = new Schema<IStoreyItem, StoreyItemModel>(
       type: String,
       required: true,
     },
+    images: [String],
   },
   {
     timestamps: true,
