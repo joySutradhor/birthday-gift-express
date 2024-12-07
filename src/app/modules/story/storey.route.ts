@@ -14,14 +14,14 @@ router.get('/', SliderItemController.getStoreyItems);
 
 router.get('/:id', SliderItemController.getSingleStoreyItem);
 
-// update slider
+// update story route
 router.patch(
   '/:id',
   validateRequest(StoreyItemValidation.updateStoreyItemZodSchema),
   SliderItemController.updateStoreyItem,
 );
 
-// delete slider
+// delete story route
 router.delete('/:id', SliderItemController.removeStoreyItem);
 
 export const StoreyRoutes = router;
