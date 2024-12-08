@@ -27,6 +27,10 @@ const moduleRoutes = [
         route: title_route_1.TitleRoutes,
     },
     {
+        path: '/event',
+        route: title_route_1.TitleRoutes,
+    },
+    {
         path: '/slider',
         route: slider_route_1.SliderRoutes,
     },
