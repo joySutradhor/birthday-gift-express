@@ -21,7 +21,7 @@ router.patch(
   SliderItemController.updateStoreyItem,
 );
 
-// delete story route
+// delete story route here
 router.delete('/:id', SliderItemController.removeStoreyItem);
 
 export const StoreyRoutes = router;
