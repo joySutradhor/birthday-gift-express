@@ -9,8 +9,23 @@ const gallery_route_1 = require("../modules/gallery/gallery.route");
 const storey_route_1 = require("../modules/story/storey.route");
 const video_route_1 = require("../modules/video/video.route");
 const music_route_1 = require("../modules/music/music.route");
+const user_route_1 = require("../modules/user/user.route");
+const auth_route_1 = require("../modules/auth/auth.route");
+const title_route_1 = require("../modules/title/title.route");
 const router = express_1.default.Router();
 const moduleRoutes = [
+    {
+        path: '/user',
+        route: user_route_1.UserRoutes,
+    },
+    {
+        path: '/auth',
+        route: auth_route_1.AuthRoutes,
+    },
+    {
+        path: '/title',
+        route: title_route_1.TitleRoutes,
+    },
     {
         path: '/slider',
         route: slider_route_1.SliderRoutes,
@@ -28,9 +43,9 @@ const moduleRoutes = [
         route: video_route_1.VideoRoutes,
     },
     {
-        path: "/music",
+        path: '/music',
         route: music_route_1.MusicRoutes,
-    }
+    },
 ];
 moduleRoutes.forEach(route => router.use(route.path, route.route));
 exports.default = router;
