@@ -6,9 +6,9 @@ const createGalleryItemZodSchema = z.object({
     img: z.string({
       required_error: 'field is required!',
     }),
-    url: z.string({
-      required_error: 'field is required!',
-    }),    
+    url: z.string().optional(),    
+    videoUrl: z.string().optional(),    
+    zoom: z.string().optional(),
   }),
 });
 
@@ -17,6 +17,8 @@ const updateGalleryItemZodSchema = z.object({
     title: z.string().optional(),
     img: z.string().optional(),
     url: z.string().optional(),
+    videoUrl: z.string().optional(),    
+    zoom: z.string().optional(),
   }),
 });
 

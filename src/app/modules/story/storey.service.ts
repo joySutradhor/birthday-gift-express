@@ -16,7 +16,7 @@ const createStoreyItem = async (item: IStoreyItem) => {
   if (existingStorey) {
     throw new ApiError(
       httpStatus.HttpStatus.CONFLICT,
-      'Slider already exists!',
+      'story already exists!',
     );
   }
 

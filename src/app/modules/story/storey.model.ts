@@ -11,6 +11,11 @@ export const StoreySchema = new Schema<IStoreyItem, StoreyItemModel>(
       type: String,
       required: true,
     },
+    musicUrl: {
+      type: String,
+      required: false,
+    },
+
     images: [String],
   },
   {

@@ -5,7 +5,7 @@ export const GalleryItemSchema = new Schema<IGalleryItem, GalleryItemModel>(
   {
     title: {
       type: String,
-      required: true,
+      required: false,
     },
     img: {
       type: String,
@@ -13,7 +13,15 @@ export const GalleryItemSchema = new Schema<IGalleryItem, GalleryItemModel>(
     },
     url: {
       type: String,
-      required: true,
+      required: false,
+    },
+    videoUrl: {
+      type: String,
+      required: false,
+    },
+    zoom: {
+      type: String,
+      required: false,
     },
   },
   {
