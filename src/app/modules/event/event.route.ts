@@ -14,7 +14,7 @@ router.get('/', SliderItemController.getStoreyItems);
 
 router.get('/:id', SliderItemController.getSingleStoreyItem);
 
-// update story route
+// update story route route here
 router.patch(
   '/:id',
   validateRequest(TitleValidation.updateEventZodSchema),
