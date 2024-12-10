@@ -1,16 +1,16 @@
 import catchAsync from '../../../shared/catchAsync';
 import { Request, Response } from 'express';
-import { TitleService } from './title.service';
+import { EventService } from './event.service';
 import sendResponse from '../../../shared/sendResponse';
-import { ITitle } from './title.interface';
+import { IEvent } from './event.interface';
 
 // create menu
-const createTitleItem = catchAsync(async (req: Request, res: Response) => {
+const createStoreyItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const item = req.body;
-  const result = await TitleService.createTitle(item);
+  const result = await EventService.createEvent(item);
 
-  sendResponse<ITitle>(res, {
+  sendResponse<IEvent>(res, {
     statusCode: httpStatus.HttpStatus.OK,
     success: true,
     message: `Item created successfully!`,
@@ -19,12 +19,12 @@ const createTitleItem = catchAsync(async (req: Request, res: Response) => {
 });
 
 // get all slider
-const getTitleItems = catchAsync(async (req: Request, res: Response) => {
+const getStoreyItems = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const item = req.body;
-  const result = await TitleService.getTitles(item);
+  const result = await EventService.getEvents(item);
 
-  sendResponse<ITitle[]>(res, {
+  sendResponse<IEvent[]>(res, {
     statusCode: httpStatus.HttpStatus.OK,
     success: true,
     message: 'Item Retrieved SuccessFully',
@@ -32,13 +32,13 @@ const getTitleItems = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-const getSingleTitleItem = catchAsync(async (req: Request, res: Response) => {
+const getSingleStoreyItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const { id } = req.params;
 
-  const result = await TitleService.getSingleTitle(id);
+  const result = await EventService.getSingleEvent(id);
 
-  sendResponse<ITitle>(res, {
+  sendResponse<IEvent>(res, {
     statusCode: httpStatus.HttpStatus.OK,
     success: true,
     message: 'Storey Item Retrieved successfully!',
@@ -47,15 +47,15 @@ const getSingleTitleItem = catchAsync(async (req: Request, res: Response) => {
 });
 
 // update single slider
-const updateTitleItem = catchAsync(async (req: Request, res: Response) => {
+const updateStoreyItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const { id } = req.params;
 
   const updatedItem = req.body;
 
-  const result = await TitleService.updateTitle(id, updatedItem);
+  const result = await EventService.updateEvent(id, updatedItem);
 
-  sendResponse<ITitle>(res, {
+  sendResponse<IEvent>(res, {
     statusCode: httpStatus.HttpStatus.OK,
     success: true,
     message: 'Item Updated SuccessFully',
@@ -64,12 +64,12 @@ const updateTitleItem = catchAsync(async (req: Request, res: Response) => {
 });
 
 // delete slider
-const removeTitleItem = catchAsync(async (req: Request, res: Response) => {
+const removeStoreyItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const { id } = req.params;
-  const result = await TitleService.removeTitle(id);
+  const result = await EventService.removeEvent(id);
 
-  sendResponse<ITitle>(res, {
+  sendResponse<IEvent>(res, {
     statusCode: httpStatus.HttpStatus.OK,
     success: true,
     message: 'Delete Storey SuccessFully',
@@ -77,10 +77,10 @@ const removeTitleItem = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-export const TitleController = {
-  createTitleItem,
-  getTitleItems,
-  getSingleTitleItem,
-  updateTitleItem,
-  removeTitleItem,
+export const SliderItemController = {
+  createStoreyItem,
+  getStoreyItems,
+  getSingleStoreyItem,
+  updateStoreyItem,
+  removeStoreyItem,
 };

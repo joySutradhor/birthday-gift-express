@@ -1,27 +1,27 @@
 import express from 'express';
 import validateRequest from '../../middlewares/validateRequest';
 import { TitleValidation } from './title.validation';
-import { SliderItemController } from './title.controller';
+import { TitleController } from './title.controller';
 const router = express.Router();
 
 router.post(
   '/create',
   validateRequest(TitleValidation.createTitleZodSchema),
-  SliderItemController.createStoreyItem,
+  TitleController.createTitleItem,
 );
 
-router.get('/', SliderItemController.getStoreyItems);
+router.get('/', TitleController.getTitleItems);
 
-router.get('/:id', SliderItemController.getSingleStoreyItem);
+router.get('/:id', TitleController.getSingleTitleItem);
 
 // update story route
 router.patch(
   '/:id',
   validateRequest(TitleValidation.updateTitleZodSchema),
-  SliderItemController.updateStoreyItem,
+  TitleController.updateTitleItem,
 );
 
 // delete story route
-router.delete('/:id', SliderItemController.removeStoreyItem);
+router.delete('/:id', TitleController.removeTitleItem);
 
 export const TitleRoutes = router;

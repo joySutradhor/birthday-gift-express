@@ -3,15 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TitleController = void 0;
+exports.SliderItemController = void 0;
 const catchAsync_1 = __importDefault(require("../../../shared/catchAsync"));
-const title_service_1 = require("./title.service");
+const event_service_1 = require("./event.service");
 const sendResponse_1 = __importDefault(require("../../../shared/sendResponse"));
 // create menu
-const createTitleItem = (0, catchAsync_1.default)(async (req, res) => {
+const createStoreyItem = (0, catchAsync_1.default)(async (req, res) => {
     const httpStatus = await import('http-status-ts');
     const item = req.body;
-    const result = await title_service_1.TitleService.createTitle(item);
+    const result = await event_service_1.EventService.createEvent(item);
     (0, sendResponse_1.default)(res, {
         statusCode: httpStatus.HttpStatus.OK,
         success: true,
@@ -20,10 +20,10 @@ const createTitleItem = (0, catchAsync_1.default)(async (req, res) => {
     });
 });
 // get all slider
-const getTitleItems = (0, catchAsync_1.default)(async (req, res) => {
+const getStoreyItems = (0, catchAsync_1.default)(async (req, res) => {
     const httpStatus = await import('http-status-ts');
     const item = req.body;
-    const result = await title_service_1.TitleService.getTitles(item);
+    const result = await event_service_1.EventService.getEvents(item);
     (0, sendResponse_1.default)(res, {
         statusCode: httpStatus.HttpStatus.OK,
         success: true,
@@ -31,10 +31,10 @@ const getTitleItems = (0, catchAsync_1.default)(async (req, res) => {
         data: result,
     });
 });
-const getSingleTitleItem = (0, catchAsync_1.default)(async (req, res) => {
+const getSingleStoreyItem = (0, catchAsync_1.default)(async (req, res) => {
     const httpStatus = await import('http-status-ts');
     const { id } = req.params;
-    const result = await title_service_1.TitleService.getSingleTitle(id);
+    const result = await event_service_1.EventService.getSingleEvent(id);
     (0, sendResponse_1.default)(res, {
         statusCode: httpStatus.HttpStatus.OK,
         success: true,
@@ -43,11 +43,11 @@ const getSingleTitleItem = (0, catchAsync_1.default)(async (req, res) => {
     });
 });
 // update single slider
-const updateTitleItem = (0, catchAsync_1.default)(async (req, res) => {
+const updateStoreyItem = (0, catchAsync_1.default)(async (req, res) => {
     const httpStatus = await import('http-status-ts');
     const { id } = req.params;
     const updatedItem = req.body;
-    const result = await title_service_1.TitleService.updateTitle(id, updatedItem);
+    const result = await event_service_1.EventService.updateEvent(id, updatedItem);
     (0, sendResponse_1.default)(res, {
         statusCode: httpStatus.HttpStatus.OK,
         success: true,
@@ -56,10 +56,10 @@ const updateTitleItem = (0, catchAsync_1.default)(async (req, res) => {
     });
 });
 // delete slider
-const removeTitleItem = (0, catchAsync_1.default)(async (req, res) => {
+const removeStoreyItem = (0, catchAsync_1.default)(async (req, res) => {
     const httpStatus = await import('http-status-ts');
     const { id } = req.params;
-    const result = await title_service_1.TitleService.removeTitle(id);
+    const result = await event_service_1.EventService.removeEvent(id);
     (0, sendResponse_1.default)(res, {
         statusCode: httpStatus.HttpStatus.OK,
         success: true,
@@ -67,10 +67,10 @@ const removeTitleItem = (0, catchAsync_1.default)(async (req, res) => {
         data: result,
     });
 });
-exports.TitleController = {
-    createTitleItem,
-    getTitleItems,
-    getSingleTitleItem,
-    updateTitleItem,
-    removeTitleItem,
+exports.SliderItemController = {
+    createStoreyItem,
+    getStoreyItems,
+    getSingleStoreyItem,
+    updateStoreyItem,
+    removeStoreyItem,
 };

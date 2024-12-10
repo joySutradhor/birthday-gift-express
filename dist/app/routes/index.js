@@ -12,6 +12,7 @@ const music_route_1 = require("../modules/music/music.route");
 const user_route_1 = require("../modules/user/user.route");
 const auth_route_1 = require("../modules/auth/auth.route");
 const title_route_1 = require("../modules/title/title.route");
+const event_route_1 = require("../modules/event/event.route");
 const router = express_1.default.Router();
 const moduleRoutes = [
     {
@@ -28,7 +29,7 @@ const moduleRoutes = [
     },
     {
         path: '/event',
-        route: title_route_1.TitleRoutes,
+        route: event_route_1.EventRoutes,
     },
     {
         path: '/slider',

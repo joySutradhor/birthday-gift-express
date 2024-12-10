@@ -7,6 +7,7 @@ import { MusicRoutes } from '../modules/music/music.route';
 import { UserRoutes } from '../modules/user/user.route';
 import { AuthRoutes } from '../modules/auth/auth.route';
 import { TitleRoutes } from '../modules/title/title.route';
+import { EventRoutes } from '../modules/event/event.route';
 
 const router = express.Router();
 
@@ -25,7 +26,7 @@ const moduleRoutes = [
   },
   {
     path: '/event',
-    route: TitleRoutes,
+    route: EventRoutes,
   },
   {
     path: '/slider',
