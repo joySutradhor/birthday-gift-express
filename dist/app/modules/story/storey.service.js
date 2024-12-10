@@ -16,7 +16,7 @@ const createStoreyItem = async (item) => {
     });
     // If a duplicate is found, throw an error or handle it as needed
     if (existingStorey) {
-        throw new ApiError_1.default(httpStatus.HttpStatus.CONFLICT, 'Slider already exists!');
+        throw new ApiError_1.default(httpStatus.HttpStatus.CONFLICT, 'story already exists!');
     }
     // Create the new menu item if no duplicate is found
     const result = await storey_model_1.StoreyItem.create(item);

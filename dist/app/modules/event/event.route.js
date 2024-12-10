@@ -12,7 +12,7 @@ const router = express_1.default.Router();
 router.post('/create', (0, validateRequest_1.default)(event_validation_1.TitleValidation.createEventZodSchema), event_controller_1.SliderItemController.createStoreyItem);
 router.get('/', event_controller_1.SliderItemController.getStoreyItems);
 router.get('/:id', event_controller_1.SliderItemController.getSingleStoreyItem);
-// update story route
+// update story route route here
 router.patch('/:id', (0, validateRequest_1.default)(event_validation_1.TitleValidation.updateEventZodSchema), event_controller_1.SliderItemController.updateStoreyItem);
 // delete story route
 router.delete('/:id', event_controller_1.SliderItemController.removeStoreyItem);

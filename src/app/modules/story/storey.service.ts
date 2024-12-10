@@ -12,7 +12,7 @@ const createStoreyItem = async (item: IStoreyItem) => {
     images: item.images
   });
 
-  // If a duplicate is found, throw an error or handle it as needed
+  // If a duplicate is found, throw an error here
   if (existingStorey) {
     throw new ApiError(
       httpStatus.HttpStatus.CONFLICT,

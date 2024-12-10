@@ -5,7 +5,7 @@ const mongoose_1 = require("mongoose");
 exports.GalleryItemSchema = new mongoose_1.Schema({
     title: {
         type: String,
-        required: true,
+        required: false,
     },
     img: {
         type: String,
@@ -13,7 +13,15 @@ exports.GalleryItemSchema = new mongoose_1.Schema({
     },
     url: {
         type: String,
-        required: true,
+        required: false,
+    },
+    videoUrl: {
+        type: String,
+        required: false,
+    },
+    zoom: {
+        type: String,
+        required: false,
     },
 }, {
     timestamps: true,

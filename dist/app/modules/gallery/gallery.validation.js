@@ -11,9 +11,9 @@ const createGalleryItemZodSchema = zod_1.default.object({
         img: zod_1.default.string({
             required_error: 'field is required!',
         }),
-        url: zod_1.default.string({
-            required_error: 'field is required!',
-        }),
+        url: zod_1.default.string().optional(),
+        videoUrl: zod_1.default.string().optional(),
+        zoom: zod_1.default.string().optional(),
     }),
 });
 const updateGalleryItemZodSchema = zod_1.default.object({
@@ -21,6 +21,8 @@ const updateGalleryItemZodSchema = zod_1.default.object({
         title: zod_1.default.string().optional(),
         img: zod_1.default.string().optional(),
         url: zod_1.default.string().optional(),
+        videoUrl: zod_1.default.string().optional(),
+        zoom: zod_1.default.string().optional(),
     }),
 });
 exports.GalleryItemValidation = {
