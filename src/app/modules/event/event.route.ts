@@ -1,27 +1,27 @@
 import express from 'express';
 import validateRequest from '../../middlewares/validateRequest';
 import { TitleValidation } from './event.validation';
-import { SliderItemController } from './event.controller';
+import { EventItemController } from './event.controller';
 const router = express.Router();
 
 router.post(
   '/create',
   validateRequest(TitleValidation.createEventZodSchema),
-  SliderItemController.createStoreyItem,
+  EventItemController.createEventItem,
 );
 
-router.get('/', SliderItemController.getStoreyItems);
+router.get('/', EventItemController.getEventItems);
 
-router.get('/:id', SliderItemController.getSingleStoreyItem);
+router.get('/:id', EventItemController.getSingleEventItem);
 
 // update story route route here
 router.patch(
   '/:id',
   validateRequest(TitleValidation.updateEventZodSchema),
-  SliderItemController.updateStoreyItem,
+  EventItemController.updateEventItem,
 );
 
 // delete story route
-router.delete('/:id', SliderItemController.removeStoreyItem);
+router.delete('/:id', EventItemController.removeEventItem);
 
 export const EventRoutes = router;

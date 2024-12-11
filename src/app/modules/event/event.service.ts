@@ -15,7 +15,7 @@ const createEvent = async (item: IEvent) => {
   if (existingStorey) {
     throw new ApiError(
       httpStatus.HttpStatus.CONFLICT,
-      'Slider already exists!',
+      'Event already exists!',
     );
   }
 

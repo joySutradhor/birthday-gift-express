@@ -4,8 +4,8 @@ import { EventService } from './event.service';
 import sendResponse from '../../../shared/sendResponse';
 import { IEvent } from './event.interface';
 
-// create menu
-const createStoreyItem = catchAsync(async (req: Request, res: Response) => {
+// create event here
+const createEventItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const item = req.body;
   const result = await EventService.createEvent(item);
@@ -18,8 +18,8 @@ const createStoreyItem = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-// get all slider
-const getStoreyItems = catchAsync(async (req: Request, res: Response) => {
+// get all event here
+const getEventItems = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const item = req.body;
   const result = await EventService.getEvents(item);
@@ -32,7 +32,7 @@ const getStoreyItems = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-const getSingleStoreyItem = catchAsync(async (req: Request, res: Response) => {
+const getSingleEventItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const { id } = req.params;
 
@@ -41,13 +41,13 @@ const getSingleStoreyItem = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IEvent>(res, {
     statusCode: httpStatus.HttpStatus.OK,
     success: true,
-    message: 'Storey Item Retrieved successfully!',
+    message: 'Event Item Retrieved successfully!',
     data: result,
   });
 });
 
-// update single slider
-const updateStoreyItem = catchAsync(async (req: Request, res: Response) => {
+// update single event
+const updateEventItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const { id } = req.params;
 
@@ -63,8 +63,8 @@ const updateStoreyItem = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-// delete slider
-const removeStoreyItem = catchAsync(async (req: Request, res: Response) => {
+// delete event
+const removeEventItem = catchAsync(async (req: Request, res: Response) => {
   const httpStatus = await import('http-status-ts');
   const { id } = req.params;
   const result = await EventService.removeEvent(id);
@@ -72,15 +72,15 @@ const removeStoreyItem = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IEvent>(res, {
     statusCode: httpStatus.HttpStatus.OK,
     success: true,
-    message: 'Delete Storey SuccessFully',
+    message: 'Delete Event SuccessFully',
     data: result,
   });
 });
 
-export const SliderItemController = {
-  createStoreyItem,
-  getStoreyItems,
-  getSingleStoreyItem,
-  updateStoreyItem,
-  removeStoreyItem,
+export const EventItemController = {
+  createEventItem,
+  getEventItems,
+  getSingleEventItem,
+  updateEventItem,
+  removeEventItem,
 };
