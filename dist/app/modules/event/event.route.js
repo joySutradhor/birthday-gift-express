@@ -9,11 +9,11 @@ const validateRequest_1 = __importDefault(require("../../middlewares/validateReq
 const event_validation_1 = require("./event.validation");
 const event_controller_1 = require("./event.controller");
 const router = express_1.default.Router();
-router.post('/create', (0, validateRequest_1.default)(event_validation_1.TitleValidation.createEventZodSchema), event_controller_1.SliderItemController.createStoreyItem);
-router.get('/', event_controller_1.SliderItemController.getStoreyItems);
-router.get('/:id', event_controller_1.SliderItemController.getSingleStoreyItem);
+router.post('/create', (0, validateRequest_1.default)(event_validation_1.TitleValidation.createEventZodSchema), event_controller_1.EventItemController.createEventItem);
+router.get('/', event_controller_1.EventItemController.getEventItems);
+router.get('/:id', event_controller_1.EventItemController.getSingleEventItem);
 // update story route route here
-router.patch('/:id', (0, validateRequest_1.default)(event_validation_1.TitleValidation.updateEventZodSchema), event_controller_1.SliderItemController.updateStoreyItem);
+router.patch('/:id', (0, validateRequest_1.default)(event_validation_1.TitleValidation.updateEventZodSchema), event_controller_1.EventItemController.updateEventItem);
 // delete story route
-router.delete('/:id', event_controller_1.SliderItemController.removeStoreyItem);
+router.delete('/:id', event_controller_1.EventItemController.removeEventItem);
 exports.EventRoutes = router;

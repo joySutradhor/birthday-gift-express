@@ -19,7 +19,7 @@ const createStoreyItem = (0, catchAsync_1.default)(async (req, res) => {
         data: result,
     });
 });
-// get all slider
+// get all story
 const getStoreyItems = (0, catchAsync_1.default)(async (req, res) => {
     const httpStatus = await import('http-status-ts');
     const item = req.body;
@@ -42,7 +42,7 @@ const getSingleStoreyItem = (0, catchAsync_1.default)(async (req, res) => {
         data: result,
     });
 });
-// update single slider
+// update single story
 const updateStoreyItem = (0, catchAsync_1.default)(async (req, res) => {
     const httpStatus = await import('http-status-ts');
     const { id } = req.params;
@@ -55,7 +55,7 @@ const updateStoreyItem = (0, catchAsync_1.default)(async (req, res) => {
         data: result,
     });
 });
-// delete slider
+// delete story
 const removeStoreyItem = (0, catchAsync_1.default)(async (req, res) => {
     const httpStatus = await import('http-status-ts');
     const { id } = req.params;

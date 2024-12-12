@@ -9,13 +9,13 @@ const event_model_1 = require("./event.model");
 //  create menu
 const createEvent = async (item) => {
     const httpStatus = await import('http-status-ts');
-    const existingStorey = await event_model_1.Event.findOne({
+    const existingEvent = await event_model_1.Event.findOne({
         title: item.title,
         des: item.des,
     });
     // If a duplicate is found, throw an error or handle it as needed
-    if (existingStorey) {
-        throw new ApiError_1.default(httpStatus.HttpStatus.CONFLICT, 'Slider already exists!');
+    if (existingEvent) {
+        throw new ApiError_1.default(httpStatus.HttpStatus.CONFLICT, 'Event already exists!');
     }
     // Create the new menu item if no duplicate is found
     const result = await event_model_1.Event.create(item);
@@ -36,8 +36,8 @@ const updateEvent = async (_id, payload) => {
     if (!isExist) {
         throw new ApiError_1.default(httpStatus.HttpStatus.NOT_FOUND, 'Item not found!');
     }
-    const { ...sliderItemData } = payload;
-    const updatedItemData = { ...sliderItemData };
+    const { ...eventItemData } = payload;
+    const updatedItemData = { ...eventItemData };
     const result = await event_model_1.Event.findByIdAndUpdate({ _id }, updatedItemData, {
         new: true,
     });

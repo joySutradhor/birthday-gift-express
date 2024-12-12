@@ -18,7 +18,7 @@ const createVideoItem = async (item: IVideoItem) => {
     );
   }
 
-  // Create the new menu item if no duplicate is found
+  // Create the new video item if no duplicate is found
   const result = await VideoItem.create(item);
   return result;
 };
@@ -29,28 +29,9 @@ const getVideoItems = async (item: IVideoItem) => {
   return result;
 };
 
-// const updateVideoItem = async (
-//   _id: string,
-//   payload: Partial<IVideoItem>,
-// ): Promise<IVideoItem | null> => {
-//   const httpStatus = await import('http-status-ts');
-//   const isExist = await VideoItem.findById(_id);
 
-//   if (!isExist) {
-//     throw new ApiError(httpStatus.HttpStatus.NOT_FOUND, 'Item not found!');
-//   }
 
-//   const { ...sliderItemData } = payload;
-
-//   const updatedItemData: Partial<IVideoItem> = { ...sliderItemData };
-
-//   const result = await VideoItem.findByIdAndUpdate({ _id }, updatedItemData, {
-//     new: true,
-//   });
-//   return result;
-// };
-
-// delete menu
+// delete video
 const removeVideoItem = async (id: string) => {
   const result = await VideoItem.findByIdAndDelete(id);
   return result;

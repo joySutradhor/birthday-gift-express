@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.StoreyItemService = void 0;
 const ApiError_1 = __importDefault(require("../../../errors/ApiError"));
 const storey_model_1 = require("./storey.model");
-//  create menu
+//  create story
 const createStoreyItem = async (item) => {
     const httpStatus = await import('http-status-ts');
     const existingStorey = await storey_model_1.StoreyItem.findOne({
@@ -14,15 +14,15 @@ const createStoreyItem = async (item) => {
         des: item.des,
         images: item.images
     });
-    // If a duplicate is found, throw an error or handle it as needed
+    // If a duplicate is found, throw an error here
     if (existingStorey) {
         throw new ApiError_1.default(httpStatus.HttpStatus.CONFLICT, 'story already exists!');
     }
-    // Create the new menu item if no duplicate is found
+    // Create the story item if no duplicate is found
     const result = await storey_model_1.StoreyItem.create(item);
     return result;
 };
-// get all menu
+// get all story
 const getStoreyItems = async (item) => {
     const result = await storey_model_1.StoreyItem.find(item).sort({ createdAt: -1 });
     return result;
@@ -44,7 +44,7 @@ const updateStoreyItem = async (_id, payload) => {
     });
     return result;
 };
-// delete menu
+// delete story
 const removeStoreyItem = async (id) => {
     const result = await storey_model_1.StoreyItem.findByIdAndDelete(id);
     return result;

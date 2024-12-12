@@ -6,13 +6,13 @@ import { Event } from './event.model';
 const createEvent = async (item: IEvent) => {
   const httpStatus = await import('http-status-ts');
 
-  const existingStorey = await Event.findOne({
+  const existingEvent = await Event.findOne({
     title: item.title,
     des: item.des,
   });
 
   // If a duplicate is found, throw an error or handle it as needed
-  if (existingStorey) {
+  if (existingEvent) {
     throw new ApiError(
       httpStatus.HttpStatus.CONFLICT,
       'Event already exists!',
@@ -47,9 +47,9 @@ const updateEvent = async (
     throw new ApiError(httpStatus.HttpStatus.NOT_FOUND, 'Item not found!');
   }
 
-  const { ...sliderItemData } = payload;
+  const { ...eventItemData } = payload;
 
-  const updatedItemData: Partial<IEvent> = { ...sliderItemData };
+  const updatedItemData: Partial<IEvent> = { ...eventItemData };
 
   const result = await Event.findByIdAndUpdate({ _id }, updatedItemData, {
     new: true,

@@ -2,7 +2,7 @@ import ApiError from '../../../errors/ApiError';
 import { IStoreyItem } from './storey.interface';
 import { StoreyItem } from './storey.model';
 
-//  create menu
+//  create story
 const createStoreyItem = async (item: IStoreyItem) => {
   const httpStatus = await import('http-status-ts');
 
@@ -20,12 +20,12 @@ const createStoreyItem = async (item: IStoreyItem) => {
     );
   }
 
-  // Create the new menu item if no duplicate is found
+  // Create the story item if no duplicate is found
   const result = await StoreyItem.create(item);
   return result;
 };
 
-// get all menu
+// get all story
 const getStoreyItems = async (item: IStoreyItem) => {
   const result = await StoreyItem.find(item).sort({ createdAt: -1 });
   return result;
@@ -58,7 +58,7 @@ const updateStoreyItem = async (
   return result;
 };
 
-// delete menu
+// delete story
 const removeStoreyItem = async (id: string) => {
   const result = await StoreyItem.findByIdAndDelete(id);
   return result;

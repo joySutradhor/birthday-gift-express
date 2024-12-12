@@ -12,7 +12,7 @@ router.post(
 
 router.get('/', VideoItemController.getVideoItems);
 
-// delete slider
+// delete video
 router.delete('/:id', VideoItemController.removeVideoItem);
 
 export const VideoRoutes = router;

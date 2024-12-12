@@ -19,7 +19,7 @@ const createVideoItem = (0, catchAsync_1.default)(async (req, res) => {
         data: result,
     });
 });
-// get all slider
+// get all video
 const getVideoItems = (0, catchAsync_1.default)(async (req, res) => {
     const httpStatus = await import('http-status-ts');
     const item = req.body;
@@ -31,20 +31,7 @@ const getVideoItems = (0, catchAsync_1.default)(async (req, res) => {
         data: result,
     });
 });
-// update single slider
-// const updateVideoItem = catchAsync(async (req: Request, res: Response) => {
-//   const httpStatus = await import('http-status-ts');
-//   const { id } = req.params;
-//   const updatedItem = req.body;
-//   const result = await VideoItemService.updateVideoItem(id, updatedItem);
-//   sendResponse<IVideoItem>(res, {
-//     statusCode: httpStatus.HttpStatus.OK,
-//     success: true,
-//     message: 'Item Updated SuccessFully',
-//     data: result,
-//   });
-// });
-// delete slider
+// delete video
 const removeVideoItem = (0, catchAsync_1.default)(async (req, res) => {
     const httpStatus = await import('http-status-ts');
     const { id } = req.params;
@@ -59,6 +46,5 @@ const removeVideoItem = (0, catchAsync_1.default)(async (req, res) => {
 exports.VideoItemController = {
     createVideoItem,
     getVideoItems,
-    //   updateVideoItem,
     removeVideoItem,
 };

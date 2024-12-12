@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SliderController = void 0;
+exports.GalleryController = void 0;
 const catchAsync_1 = __importDefault(require("../../../shared/catchAsync"));
 const gallery_service_1 = require("./gallery.service");
 const sendResponse_1 = __importDefault(require("../../../shared/sendResponse"));
@@ -56,7 +56,7 @@ const removeGalleryItem = (0, catchAsync_1.default)(async (req, res) => {
         data: result,
     });
 });
-exports.SliderController = {
+exports.GalleryController = {
     createGalleryItem,
     getGalleryItems,
     updateGalleryItem,

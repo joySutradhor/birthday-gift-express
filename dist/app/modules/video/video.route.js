@@ -11,6 +11,6 @@ const video_controller_1 = require("./video.controller");
 const router = express_1.default.Router();
 router.post('/create', (0, validateRequest_1.default)(video_validation_1.VideoItemValidation.createVideoItemZodSchema), video_controller_1.VideoItemController.createVideoItem);
 router.get('/', video_controller_1.VideoItemController.getVideoItems);
-// delete slider
+// delete video
 router.delete('/:id', video_controller_1.VideoItemController.removeVideoItem);
 exports.VideoRoutes = router;

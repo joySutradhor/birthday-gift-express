@@ -9,10 +9,10 @@ const validateRequest_1 = __importDefault(require("../../middlewares/validateReq
 const gallery_validation_1 = require("./gallery.validation");
 const gallery_controller_1 = require("./gallery.controller");
 const router = express_1.default.Router();
-router.post('/create', (0, validateRequest_1.default)(gallery_validation_1.GalleryItemValidation.createGalleryItemZodSchema), gallery_controller_1.SliderController.createGalleryItem);
-router.get('/', gallery_controller_1.SliderController.getGalleryItems);
+router.post('/create', (0, validateRequest_1.default)(gallery_validation_1.GalleryItemValidation.createGalleryItemZodSchema), gallery_controller_1.GalleryController.createGalleryItem);
+router.get('/', gallery_controller_1.GalleryController.getGalleryItems);
 // update slider
-router.patch('/:id', (0, validateRequest_1.default)(gallery_validation_1.GalleryItemValidation.updateGalleryItemZodSchema), gallery_controller_1.SliderController.updateGalleryItem);
+router.patch('/:id', (0, validateRequest_1.default)(gallery_validation_1.GalleryItemValidation.updateGalleryItemZodSchema), gallery_controller_1.GalleryController.updateGalleryItem);
 // delete slider
-router.delete('/:id', gallery_controller_1.SliderController.removeGalleryItem);
+router.delete('/:id', gallery_controller_1.GalleryController.removeGalleryItem);
 exports.GalleryRoutes = router;
