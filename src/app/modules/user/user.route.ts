@@ -10,4 +10,9 @@ router.post(
   UserController.createUser,
 );
 
+router.post(
+  '/:id',
+  UserController.deleteUser,
+);
+
 export const UserRoutes = router;
